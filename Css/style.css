@@ -1,0 +1,84 @@
+html, body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.begin{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    background-color: bisque;
+    background-image: url("/Users/AjaySpikman/Library/CloudStorage/OneDrive-ROCAlfa-college/Projectmap/Images/4321fee4-387d-4127-9880-f34d73afd243.JPG");
+    background-size: cover;
+    width: 100%;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.spel{
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    background-color: bisque;
+    background-size: cover;
+    width: 100%;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.eind{
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    background-color: bisque;
+    background-size: cover;
+    width: 100%;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.informatie{
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    background-color: bisque;
+    background-size: cover;
+    width: 100%;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.Button{
+    padding: 10px;
+    font-size: 20px;
+    background-color: darkcyan;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.Game_Button{
+    padding: 10px;
+    font-size: 20px;
+    background-color: grey;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: hand;
+    width: 200px;
+}

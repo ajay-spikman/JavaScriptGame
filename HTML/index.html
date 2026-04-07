@@ -1,35 +1,47 @@
 <!DOCTYPE html>
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pierewaaiers</title>
-    <script src="functions.js"> </script>
+    <title>Hammy</title>
+    <script src="../JavaScript/functions.js"> </script>
+    <link rel="stylesheet" href="../Css/style.css">
 </head>
 
 <body>
-    <div id="Start pagina">
-        <h1 id="Title">Pierewaaiers</h1>
+    <div class="begin">
+        <h1 id="Title">Hammy</h1>
         <div id="Start button">
-            <button> start </button>
+            <button class="Button" onclick="showSpel()"> start </button>
         </div> 
         <div id=" Informatie button">
-            <button> informatie </button>
+            <button class="Button" onclick="showInformatie()"> informatie </button>
         </div>
     </div>
 
-    <div class="Spel">
+    <div class="informatie">
+        <h2 id="Informatie"> informatie </h2>
+        <div id="Informatie knoppen">
+            <button class="Button" onclick="showSpel()"> start spel </button>
+            <button class="Button" onclick="showBegin()"> terug naar menu </button>
+        </div>
+    </div>
+
+
+    <div class="spel">
         <h2 id="Vraag"> vraag hier </h2>
             <div id="Antwoord knoppen">
-                <button class="Button">antwoord 1</button>
-                <button class="Button">antwoord 2</button>
+                <button class="Game_Button">antwoord 1</button>
+                <button class="Game_Button">antwoord 2</button>
             </div>
     </div>
 
-    <div id="Eind scherm">
+    <div class="eind">
         <h2 id="Eind score"> eind score </h2>
         <div id="Begin menu knoppen">
-            <button class="Laatste knoppen"> terug naar menu </button>
-            <button class="Laatste knoppen"> informatie </button>
+            <button class="Button" onclick="showBegin()"> terug naar menu </button>
+            <button class="Button" onclick="showInformatie()"> informatie </button>
         </div>
     </div>
-</body
+</body>
+</html>
