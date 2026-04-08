@@ -79,6 +79,18 @@ html, body{
     color: black;
     border: none;
     border-radius: 5px;
-    cursor: hand;
+    cursor: pointer;
     width: 200px;
+}
+
+#Title{
+    font-size: 50px;
+    color: white;
+    text-shadow: 2px 2px 2px black;
+}
+
+#vraag{
+    font-size: 30px;
+    color: white;
+    text-shadow: 2px 2px 2px black;
 }
