@@ -7,17 +7,17 @@ let vragen = [
     {
         tekst: "Ik heb .... gisteren nog gebeld.",
         antwoorden: ["jou", "jouw"],
-        correct: 1
+        correct: 0
     },
     {
         tekst: "Waar ligt .... tas?",
         antwoorden: ["jou", "jouw"],
-        correct: 0
+        correct: 1
     },
     {
         tekst: "Ik ben benieuwd naar .... mening.",
         antwoorden: ["jou", "jouw"],
-        correct: 0
+        correct: 1
     },
     {
         tekst: "Ik wil graag met .... praten.",
@@ -37,7 +37,7 @@ let vragen = [
     {
         tekst: "Is dat .... idee geweest?",
         antwoorden: ["jou", "jouw"],
-        correct: 0
+        correct: 1
     },
     {
         tekst: "Ik zie .... daar staan.",
@@ -57,7 +57,7 @@ let vragen = [
     {
         tekst: "Heb je .... telefoon al gevonden?",
         antwoorden: ["jou", "jouw"],
-        correct: 0
+        correct: 1
     },
     {
         tekst: "Ze helpt .... met huiswerk.",
@@ -75,12 +75,54 @@ let vragen = [
         correct: 0
     },
     {
-        tekst: "`Is dit .... jas of die van iemand anders?",
+        tekst: "Is dit .... jas of die van iemand anders?",
         antwoorden: ["jou", "jouw"],
-        correct: 0
+        correct: 1
     }
 
 ];
+
+let currentQuestion = 0;
+let score = 0;
+
+function renderVragen() {
+    let tekstElement = document.getElementById("tekst");
+    let antwoordKnoppen = document.querySelectorAll(".Game_Button");
+
+    if (currentQuestion < vragen.length) {
+        const vraag = vragen[currentQuestion];
+        tekstElement.textContent = vraag.tekst;
+        
+        antwoordKnoppen.forEach((knop, index) => {
+            knop.textContent = vraag.antwoorden[index];
+            knop.style.backgroundColor = "bisque";
+        });
+    }
+}
+
+function checkAnswer(index) {
+    const correct = vragen[currentQuestion].correct;
+    const antwoordKnoppen = document.querySelectorAll(".Game_Button");
+    
+    if (index === correct) {
+        score++;
+        antwoordKnoppen[index].style.backgroundColor = "green";
+    } else {
+        antwoordKnoppen[index].style.backgroundColor = "red";
+        antwoordKnoppen[correct].style.backgroundColor = "green";
+    }
+    
+    setTimeout(() => {
+        currentQuestion++;
+        if (currentQuestion < vragen.length) {
+            renderVragen();
+        } else {
+            document.getElementById("Eind score").textContent = `Je hebt ${score} van ${vragen.length} vragen goed!`;
+            showEind();
+        }
+    }, 1000);
+}
+
 
 function showElement(begin, spel, informatie, eind) 
 {
@@ -91,18 +133,16 @@ function showElement(begin, spel, informatie, eind)
 }
 
 function showBegin() {
+    currentQuestion = 0;
+    score = 0;
     showElement("flex", "none", "none", "none");
 }
 
 function showSpel() {
+    currentQuestion = 0;
+    score = 0;
     showElement("none", "flex", "none", "none");
-    let tekstElement = document.getElementById("tekst");
-    let antwoordKnoppen = document.querySelectorAll(".Game_Button");
-
-    antwoordKnoppen.forEach((knop, index) => {
-        knop.textContent = vragen[1].antwoorden[index];
-    });
-    tekstElement.textContent = vragen[1].tekst;
+    renderVragen();
 }
 
 function showInformatie() {
