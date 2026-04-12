@@ -11,8 +11,6 @@ html, body{
     flex-direction: column;
     gap: 10px;
     text-align: center;
-    background-color: bisque;
-    background-image: url("/Users/AjaySpikman/Library/CloudStorage/OneDrive-ROCAlfa-college/Projectmap/Images/4321fee4-387d-4127-9880-f34d73afd243.JPG");
     background-size: cover;
     width: 100%;
     min-height: 100vh;
@@ -20,13 +18,38 @@ html, body{
     align-items: center;
 }
 
-.spel{
+.countdown{
     position: absolute;
     display: none;
     flex-direction: column;
     gap: 10px;
     text-align: center;
+    background-size: cover;
     background-color: bisque;
+    width: 100%;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+.spel1{
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    background-size: cover;
+    width: 100%;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+}
+
+.spel2{
+    position: absolute;
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
     background-size: cover;
     width: 100%;
     min-height: 100vh;
@@ -40,7 +63,6 @@ html, body{
     flex-direction: column;
     gap: 10px;
     text-align: center;
-    background-color: bisque;
     background-size: cover;
     width: 100%;
     min-height: 100vh;
@@ -63,13 +85,17 @@ html, body{
 }
 
 .Button{
+    color: white;
+    text-shadow: 2px 2px 2px black;
     padding: 10px;
     font-size: 20px;
-    background-color: darkcyan;
-    color: black;
-    border: none;
-    border-radius: 5px;
     cursor: pointer;
+    background: rgba(4, 4, 4, 0.14);
+    border-radius: 10px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(2.8px);
+    -webkit-backdrop-filter: blur(2.8px);
+    border: 1px solid rgba(4, 4, 4, 0.86);
 }
 
 .Game_Button{
@@ -90,6 +116,50 @@ html, body{
 }
 
 #vraag{
+    font-size: 30px;
+    color: white;
+    text-shadow: 2px 2px 2px black;
+}
+
+#achtergrond img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+
+#SpelAchtergrond img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+
+#eind_scherm img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+
+#eind_score{
+    font-size: 30px;
+    color: white;
+    text-shadow: 2px 2px 2px black;
+}
+
+#gametimer, #gametimer2{
+    position: absolute;
+    
     font-size: 30px;
     color: white;
     text-shadow: 2px 2px 2px black;

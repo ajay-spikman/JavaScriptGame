@@ -4,45 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hammy</title>
-    <script src="../JavaScript/functions.js"> </script>
+    <script src="../questions.js"></script>
+    <script src="../JavaScript/functions.js"></script>
     <link rel="stylesheet" href="../Css/style.css">
 </head>
 
 <body>
     <div class="begin">
         <h1 id="Title">Hammy</h1>
-        <div id="Start button">
-            <button class="Button" onclick="showSpel()"> start </button>
+        <div id="Start_button">
+            <button class="Button" onclick="showCountdown()">jou / jouw</button>
+            <button class="Button" onclick="showCountdown()">verledentijd</button>
         </div> 
-        <div id=" Informatie button">
-            <button class="Button" onclick="showInformatie()"> informatie </button>
+        <div id="Informatie_button">
+            <button class="Button" onclick="showInformatie()">informatie</button>
         </div>
+        <div id="achtergrond"><img src="../Images/Hammy.JPG" alt=" Achtergrond "></div>
     </div>
 
     <div class="informatie">
-        <h2 id="Informatie"> informatie </h2>
-        <div id="Informatie knoppen">
-            <button class="Button" onclick="showSpel()"> start spel </button>
-            <button class="Button" onclick="showBegin()"> terug naar menu </button>
+        <h2 id="Informatie">informatie</h2>
+        <div id="Informatie_knoppen">
+            <button class="Button" onclick="showCountdown()">start jou / jouw</button>
+            <button class="Button" onclick="showCountdown()">start verledentijd</button>
+            <button class="Button" onclick="showBegin()">terug naar menu</button>
         </div>
     </div>
+    
+    <div id="countdown_scherm" class="countdown">
+        <h1 id="aftel">3</h1>
+    </div>
 
-
-    <div class="spel">
-        <h1 id="tekst"></h1>
-        <h2 id="Vraag">Wat moet er op de plaats van de puntjes staan?</h2>
-            <div id="Antwoord knoppen">
+    <div class="spel1">
+        <h1 id="tekst1"></h1>
+        <h2 id="Vraag1">Wat moet er op de plaats van de puntjes staan?</h2>
+            <div id="Antwoord_knoppen1">
                 <button class="Game_Button" onclick="checkAnswer(0)">antwoord 1</button>
                 <button class="Game_Button" onclick="checkAnswer(1)">antwoord 2</button>
             </div>
+            <h2 id="gametimer">Tijd: 30s</h2>
+            <div id="SpelAchtergrond"><img src="../Images/SpelAchtergrond.jpg" alt="Spel Achtergrond"></div>
+    </div>
+
+    <div class="spel2">
+        <h1 id="tekst2"></h1>
+        <h2 id="Vraag2">Wat moet er op de plaats van de puntjes staan?</h2>
+            <div id="Antwoord_knoppen2">
+                <button class="Game_Button" onclick="checkAnswer(0)">antwoord 1</button>
+                <button class="Game_Button" onclick="checkAnswer(1)">antwoord 2</button>
+            </div>
+            <h2 id="gametimer2">Tijd: 30s</h2>
+            <div id="SpelAchtergrond"><img src="../Images/SpelAchtergrond.jpg" alt="Spel Achtergrond"></div>
     </div>
 
     <div class="eind">
-        <h2 id="Eind score"> eind score </h2>
-        <div id="Begin menu knoppen">
-            <button class="Button" onclick="showBegin()"> terug naar menu </button>
-            <button class="Button" onclick="showInformatie()"> informatie </button>
+        <h2 id="Eind_score"> eind score </h2>
+        <div id="Begin_menu_knoppen">
+            <button class="Button" onclick="showBegin()">terug naar menu</button>
+            <button class="Button" onclick="showInformatie()">informatie</button>
         </div>
+        <div id="eind_scherm"><img src="" alt=""></div>
     </div>
 </body>
 </html>
