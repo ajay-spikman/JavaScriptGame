@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hammy</title>
+    <script src="../JavaScript/questions.js"></script>
+    <script src="../JavaScript/functions.js"></script>
+    <link rel="stylesheet" href="../Css/style.css">
+</head>
+
+<body>
+    <div class="begin">
+        <h1 id="Title">Hammy</h1>
+        <div id="Start_button">
+            <button class="Button" onclick="startSpel1()">jou / jouw</button>
+            <button class="Button" onclick="startSpel2()">verledentijd</button>
+        </div> 
+        <div id="Informatie_button">
+            <button class="Button" onclick="showInformatie()">informatie</button>
+        </div>
+        <div id="achtergrond"><img src="../Images/Hammy.JPG" alt=" Achtergrond "></div>
+    </div>
+
+    <div class="informatie">
+        <h2 id="Informatie">informatie</h2>
+        <div id="content_container">
+            <div id="column_left">
+                <div id="uitleg_teks2">
+                    <h3><h2> jou vs jouw </h2>
+                        jou = persoon (aan wie iets is)
+                        Je kunt het vervangen door hem of haar
+                        Voorbeeld: Ik zie jou.
+                        jouw = bezit (van jou)
+                        Je kunt het vervangen door mijn of zijn
+                        Voorbeeld: Dat is jouw boek.
+                        Snelle test:
+                        
+                        Kun je er "mijn" van maken? → jouw
+                        Kun je er "mij" van maken? → jou
+
+                        Voorbeelden:
+                        Dat is jouw fiets. (mijn fiets)
+                        Ik help jou. (ik help hem)
+                    </h3>
+                </div>
+                <button class="Button" onclick="startSpel1()">jou / jouw</button>
+            </div>
+            <div id="column_right">
+                <div id="uitleg_teks1">
+                    <h3><h2>kiest tussen -te en -de in de verleden tijd.</h2>
+
+                        Haal -en van het werkwoord af (de stam)
+                        werken → werk
+                        Kijk naar de laatste letter van de stam
+                        Zit die in 't kofschip (t, k, f, s, ch, p)? → -te
+                        Niet? → -de
+
+                        Voorbeelden:
+                        werk → werkte
+                        fiets → fietste
+                        speel → speelde
+                        hoor → hoorde
+
+                        Let op:
+                        leven → leefde (je hoort een v, dus -de)
+                    </h3>
+                </div>
+                <button class="Button" onclick="startSpel2()">Start verledentijd</button>
+            </div>
+        </div>
+        <div id="back_button_container">
+            <button class="Button" onclick="showBegin()">terug naar menu</button>
+        </div>
+    </div>
+            <h3><h2>kiest tussen -te en -de in de verleden tijd.</h2>
+
+                Haal -en van het werkwoord af (de stam)
+                werken → werk
+                Kijk naar de laatste letter van de stam
+                Zit die in 't kofschip (t, k, f, s, ch, p)? → -te
+                Niet? → -de
+
+                Voorbeelden:
+                werk → werkte
+                fiets → fietste
+                speel → speelde
+                hoor → hoorde
+
+                Let op:
+                leven → leefde (je hoort een v, dus -de)
+            </h3>
+        </div>
+        <div id="uitleg_teks2">
+            <h3><h2> jou vs jouw </h2>
+                jou = persoon (aan wie iets is)
+                Je kunt het vervangen door hem of haar
+                Voorbeeld: Ik zie jou.
+                jouw = bezit (van jou)
+                Je kunt het vervangen door mijn of zijn
+                Voorbeeld: Dat is jouw boek.
+                Snelle test:
+                
+                Kun je er “mijn” van maken? → jouw
+                Kun je er “mij” van maken? → jou
+
+                Voorbeelden:
+                Dat is jouw fiets. (mijn fiets)
+                Ik help jou. (ik help hem)
+            </h3>
+        </div>        
+    </div>
+    <div id="countdown_scherm" class="countdown">
+        <h1 id="aftel">3</h1>
+    </div>
+
+    <div class="spel1">
+        <h1 id="tekst1"></h1>
+        <h2 id="Vraag1">Wat moet er op de plaats van de puntjes staan?</h2>
+            <div id="Antwoord_knoppen1">
+                <button class="Game_Button" onclick="checkAnswer(0)">antwoord 1</button>
+                <button class="Game_Button" onclick="checkAnswer(1)">antwoord 2</button>
+            </div>
+            <h2 id="gametimer">Tijd: 30s</h2>
+            <div id="SpelAchtergrond"><img src="../Images/SpelAchtergrond.jpg" alt="Spel Achtergrond"></div>
+    </div>
+
+    <div class="spel2">
+        <h1 id="tekst2"></h1>
+        <h2 id="Vraag2">Wat moet er op de plaats van de puntjes staan?</h2>
+            <div id="Antwoord_knoppen2">
+                <button class="Game_Button" onclick="checkAnswer(0)">antwoord 1</button>
+                <button class="Game_Button" onclick="checkAnswer(1)">antwoord 2</button>
+            </div>
+            <h2 id="gametimer2">Tijd: 60s</h2>
+            <div id="SpelAchtergrond"><img src="../Images/SpelAchtergrond.jpg" alt="Spel Achtergrond"></div>
+    </div>
+
+    <div class="eind">
+        <h2 id="Eind_score"> eind score </h2>
+        <div id="Begin_menu_knoppen">
+            <button class="Button" onclick="showBegin()">terug naar menu</button>
+            <button class="Button" onclick="showInformatie()">informatie</button>
+        </div>
+    </div>
+</body>
+</html>

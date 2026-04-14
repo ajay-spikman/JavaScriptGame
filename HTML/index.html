@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hammy</title>
-    <script src="../questions.js"></script>
+    <script src="../JavaScript/questions.js"></script>
     <script src="../JavaScript/functions.js"></script>
     <link rel="stylesheet" href="../Css/style.css">
 </head>
@@ -13,8 +13,8 @@
     <div class="begin">
         <h1 id="Title">Hammy</h1>
         <div id="Start_button">
-            <button class="Button" onclick="showCountdown()">jou / jouw</button>
-            <button class="Button" onclick="showCountdown()">verledentijd</button>
+            <button class="Button" onclick="startSpel1()">jou / jouw</button>
+            <button class="Button" onclick="startSpel2()">verledentijd</button>
         </div> 
         <div id="Informatie_button">
             <button class="Button" onclick="showInformatie()">informatie</button>
@@ -23,10 +23,52 @@
     </div>
 
     <div class="informatie">
-        <h2 id="Informatie">informatie</h2>
+        <h1 id="Informatie">Informatie</h1>
+        <div id="Informatie_container">
+            <div id="column_left">
+                <div id="uitleg_teks1">
+                    <p><h2>verleden tijd</h2>
+                        verwijder de -en van het werkwoord af
+                        werken → werk
+                        Kijk naar de laatste letter van de stam
+                        Zit die in <b>'t kofschip</b> (t, k, f, s, c, h, p)? → -te
+                        Niet? → -de
+                            
+                        Voorbeelden:
+                        werk → werkte
+                        fiets → fietste
+                        speel → speelde
+                        hoor → hoorde
+                            
+                        Let op:
+                        leven → leefde (je hoort een v, dus -de)
+                    </p>
+                </div>
+                <button class="Button" onclick="startSpel1()">start verledentijd</button>
+            </div>
+            <div id="column_right">
+                <div id="uitleg_teks2">
+                    <p><h2> jou vs jouw </h2>
+                        = persoon (aan wie iets is)
+                        Je kunt het vervangen door hem of haar
+                        Voorbeeld: Ik zie jou.
+                        jouw = bezit (van jou)
+                        Je kunt het vervangen door mijn of zijn
+                        Voorbeeld: Dat is jouw boek.
+                        Snelle test:
+                        
+                        Kun je er "mijn" van maken? → jouw
+                        Kun je er "mij" van maken? → jou
+                        
+                        Voorbeelden:
+                        Dat is jouw fiets. (mijn fiets)
+                        Ik help jou. (ik help hem)
+                    </p>
+                </div>
+                <button class="Button" onclick="startSpel2()">start jou / jouw</button>
+            </div>
+        </div>
         <div id="Informatie_knoppen">
-            <button class="Button" onclick="showCountdown()">start jou / jouw</button>
-            <button class="Button" onclick="showCountdown()">start verledentijd</button>
             <button class="Button" onclick="showBegin()">terug naar menu</button>
         </div>
     </div>
@@ -42,8 +84,7 @@
                 <button class="Game_Button" onclick="checkAnswer(0)">antwoord 1</button>
                 <button class="Game_Button" onclick="checkAnswer(1)">antwoord 2</button>
             </div>
-            <h2 id="gametimer">Tijd: 30s</h2>
-            <div id="SpelAchtergrond"><img src="../Images/SpelAchtergrond.jpg" alt="Spel Achtergrond"></div>
+            <h2 id="gametimer">Tijd: 60s</h2>
     </div>
 
     <div class="spel2">
@@ -53,8 +94,7 @@
                 <button class="Game_Button" onclick="checkAnswer(0)">antwoord 1</button>
                 <button class="Game_Button" onclick="checkAnswer(1)">antwoord 2</button>
             </div>
-            <h2 id="gametimer2">Tijd: 30s</h2>
-            <div id="SpelAchtergrond"><img src="../Images/SpelAchtergrond.jpg" alt="Spel Achtergrond"></div>
+            <h2 id="gametimer2">Tijd: 60s</h2>
     </div>
 
     <div class="eind">
@@ -63,6 +103,7 @@
             <button class="Button" onclick="showBegin()">terug naar menu</button>
             <button class="Button" onclick="showInformatie()">informatie</button>
         </div>
+        <div id="Eind_achtergrond"><img src="../Images/eind_achtergrond.jpg" alt=" Achtergrond "></div>
         <div id="eind_scherm"><img src="" alt=""></div>
     </div>
 </body>

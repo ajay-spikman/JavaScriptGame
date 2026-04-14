@@ -1,5 +1,13 @@
 // questions is loaded from questions.js via regular script tag
 
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const randomIndex = Math.floor(Math.random() * (i + 1));
+        [array[i], array[randomIndex]] = [array[randomIndex], array[i]];
+    }
+    return array;
+}
+
 function showElement(begin, spel1, spel2, countdown, informatie, eind) 
 {
     document.querySelector(".begin").style.display = begin;
@@ -20,11 +28,11 @@ function showSpel1() {
     currentQuestion = 0;
     score = 0;
     question_set = 0;
-    vragen = questions[question_set];
+    vragen = shuffleArray([...questions[question_set]]);
     showElement("none", "flex", "none", "none", "none", "none");
     renderVragen();
     let gametimerElement = document.getElementById("gametimer");
-    let timeLeft = 30;
+    let timeLeft = 60;
     gametimerElement.textContent = `Tijd: ${timeLeft}s`;
 
     let gametimerInterval = setInterval(() => {
@@ -32,7 +40,7 @@ function showSpel1() {
         gametimerElement.textContent = `Tijd: ${timeLeft}s`;
         if (timeLeft <= 0) {
             clearInterval(gametimerInterval);
-            document.getElementById("Eind_score").textContent = `Je hebt ${score} van ${vragen.length} vragen goed!`;
+            document.getElementById("Eind_score").textContent = `Je hebt ${score} van ${currentQuestion} vragen goed!`;
             showEind();
         }
     }, 1000);
@@ -42,11 +50,11 @@ function showSpel2() {
     currentQuestion = 0;
     score = 0;
     question_set = 1;
-    vragen = questions[question_set];
+    vragen = shuffleArray([...questions[question_set]]);
     showElement("none", "none", "flex", "none", "none", "none");
     renderVragen();
     let gametimerElement = document.getElementById("gametimer2");
-    let timeLeft = 30;
+    let timeLeft = 60;
     gametimerElement.textContent = `Tijd: ${timeLeft}s`;
 
     let gametimerInterval = setInterval(() => {
@@ -54,7 +62,7 @@ function showSpel2() {
         gametimerElement.textContent = `Tijd: ${timeLeft}s`;
         if (timeLeft <= 0) {
             clearInterval(gametimerInterval);
-            document.getElementById("Eind_score").textContent = `Je hebt ${score} van ${vragen.length} vragen goed!`;
+            document.getElementById("Eind_score").textContent = `Je hebt ${score} van ${currentQuestion} vragen goed!`;
             showEind();
         }
     }, 1000);
@@ -73,11 +81,20 @@ function showCountdown() {
             clearInterval(countdownInterval);
             if (question_set === 0) {
                 showSpel1();
-            } else if (question_set === 1) {
-                showSpel2();
+            } else {    showSpel2();
             }
         }
     }, 1000);
+}
+
+function startSpel1() {
+    question_set = 0;
+    showCountdown();
+}
+
+function startSpel2() {
+    question_set = 1;
+    showCountdown();
 }
 
 
@@ -112,8 +129,8 @@ function renderVragen() {
         
         antwoordKnoppen.forEach((knop, index) => {
             knop.textContent = vraag.antwoorden[index];
-            knop.style.backgroundColor = "bisque";
-            knop.style.border = "2px solid pink";
+            knop.style.backgroundColor = "white";
+            knop.style.border = "2px solid black";
         });
     }
 }
@@ -126,8 +143,7 @@ function checkAnswer(index) {
     
     if (index === correct) {
         score++;
-        // antwoordKnoppen[index].style.backgroundColor = "green";
-        antwoordKnoppen[index].style.border = "2px solid green";
+        antwoordKnoppen[index].style.backgroundColor = "green";
     } else {
         antwoordKnoppen[index].style.backgroundColor = "red";
         antwoordKnoppen[correct].style.backgroundColor = "green";
@@ -138,15 +154,17 @@ function checkAnswer(index) {
         if (currentQuestion < vragen.length) {
             renderVragen();
         } else {
-            document.getElementById("Eind_score").textContent = `Je hebt ${score} van ${vragen.length} vragen goed!`;
+            document.getElementById("Eind_score").textContent = `Je hebt ${score} van ${currentQuestion} vragen goed!`;
             showEind();
         }
     }, 1000);
 }
 
-// Make functions globally available for onclick handlers
 window.showBegin = showBegin;
 window.showSpel1 = showSpel1;
 window.showSpel2 = showSpel2;
 window.showInformatie = showInformatie;
+window.checkAnswer = checkAnswer;
+window.startSpel1 = startSpel1;
+window.startSpel2 = startSpel2;
 window.checkAnswer = checkAnswer;
