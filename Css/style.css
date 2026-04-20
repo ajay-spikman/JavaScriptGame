@@ -25,32 +25,20 @@ html, body{
     gap: 10px;
     text-align: center;
     background-size: cover;
-    background-color: bisque;
+    background-color: lightcoral;
     width: 100%;
     min-height: 100vh;
     justify-content: center;
     align-items: center;
 }
-.spel1{
+.spel1, .spel2{
     position: absolute;
     display: none;
     flex-direction: column;
     gap: 10px;
     text-align: center;
     background-size: cover;
-    width: 100%;
-    min-height: 100vh;
-    justify-content: center;
-    align-items: center;
-}
-
-.spel2{
-    position: absolute;
-    display: none;
-    flex-direction: column;
-    gap: 10px;
-    text-align: center;
-    background-size: cover;
+    background-color: lightblue;
     width: 100%;
     min-height: 100vh;
     justify-content: center;
@@ -65,6 +53,7 @@ html, body{
     flex-direction: column;
     gap: 10px;
     background-size: cover;
+    background-color: lightgreen;
     text-align: center;
     width: 100%;
     height: 100vh;
@@ -79,7 +68,7 @@ html, body{
     flex-direction: column;
     gap: 10px;
     text-align: center;
-    background-color: bisque;
+    background-color: lightsalmon;
     background-size: cover;
     width: 100%;
     height: 100vh;
@@ -105,7 +94,7 @@ html, body{
 .Game_Button{
     padding: 10px;
     font-size: 20px;
-    background-color: grey;
+    background-color: lightblue;
     color: black;
     border: none;
     border-radius: 5px;
@@ -115,12 +104,12 @@ html, body{
 
 #Title{
     font-size: 50px;
-    color: white;
+    color: white;   
     text-shadow: 2px 2px 2px black;
 }
 
-#vraag{
-    font-size: 30px;
+#vraag1, #vraag2{
+    font-size: 25px;
     color: white;
     text-shadow: 2px 2px 2px black;
 }
@@ -135,12 +124,12 @@ html, body{
     left: 0;
 }
 
-#SpelAchtergrond img{
+#game_background{
     position: absolute;
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: -1;
+    z-index: -10;
     top: 0;
     left: 0;
 }
@@ -166,6 +155,12 @@ html, body{
     color: white;
     text-shadow: 2px 2px 2px black;
     z-index: 1;
+}
+
+#aftel{
+    font-size: 50px;
+    color: white;;
+    text-shadow: 2px 2px 2px black;
 }
 
 #Informatie{
@@ -208,7 +203,7 @@ html, body{
 }
 
 #uitleg_teks1, #uitleg_teks2{
-    background: bisque;
+    background: rgb(221, 137, 104);
     border: 2px solid black;
     padding: 15px;
     border-radius: 10px;

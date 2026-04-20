@@ -112,7 +112,6 @@ let vragen = [];
 let currentQuestion = 0;
 let score = 0;
 
-// Initialize vragen after import
 vragen = questions[question_set];
 
 function renderVragen() {
@@ -129,7 +128,7 @@ function renderVragen() {
         
         antwoordKnoppen.forEach((knop, index) => {
             knop.textContent = vraag.antwoorden[index];
-            knop.style.backgroundColor = "white";
+            knop.style.backgroundColor = "rgb(104, 119, 134)";
             knop.style.border = "2px solid black";
         });
     }
@@ -144,8 +143,10 @@ function checkAnswer(index) {
     if (index === correct) {
         score++;
         antwoordKnoppen[index].style.backgroundColor = "green";
+        document.getElementById("clickSound1").play();
     } else {
         antwoordKnoppen[index].style.backgroundColor = "red";
+        document.getElementById("clickSound2").play();
         antwoordKnoppen[correct].style.backgroundColor = "green";
     }
     
@@ -160,11 +161,22 @@ function checkAnswer(index) {
     }, 1000);
 }
 
+function Playsound1() {
+    document.getElementById("clickSound1").play();
+}
+
+function Playsound0() {
+    document.getElementById("clickSound2").play();
+}
+
 window.showBegin = showBegin;
 window.showSpel1 = showSpel1;
 window.showSpel2 = showSpel2;
 window.showInformatie = showInformatie;
 window.checkAnswer = checkAnswer;
 window.startSpel1 = startSpel1;
+window.Playsound1 = Playsound1;
+window.Playsound0 = Playsound0;
 window.startSpel2 = startSpel2;
 window.checkAnswer = checkAnswer;
+window.playAudio = playAudio;

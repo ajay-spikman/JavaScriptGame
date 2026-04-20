@@ -84,7 +84,10 @@
                 <button class="Game_Button" onclick="checkAnswer(0)">antwoord 1</button>
                 <button class="Game_Button" onclick="checkAnswer(1)">antwoord 2</button>
             </div>
-            <h2 id="gametimer">Tijd: 60s</h2>
+        <audio id="clickSound1" src="../Sounds/Correct.mp3"></audio>
+        <audio id="clickSound2" src="../Sounds/Incorrect.mp3"></audio>
+        <h2 id="gametimer">Tijd: 60s</h2>
+        <image id="game_background" src="../Images/GameBackground.jpg" alt="achtergrond">    
     </div>
 
     <div class="spel2">
@@ -94,7 +97,9 @@
                 <button class="Game_Button" onclick="checkAnswer(0)">antwoord 1</button>
                 <button class="Game_Button" onclick="checkAnswer(1)">antwoord 2</button>
             </div>
-            <h2 id="gametimer2">Tijd: 60s</h2>
+        <audio id="clickSound1" src="../Sounds/Correct.mp3"></audio>
+        <audio id="clickSound2" src="../Sounds/Incorrect.mp3"></audio>
+        <h2 id="gametimer2">Tijd: 60s</h2>   
     </div>
 
     <div class="eind">
@@ -103,8 +108,6 @@
             <button class="Button" onclick="showBegin()">terug naar menu</button>
             <button class="Button" onclick="showInformatie()">informatie</button>
         </div>
-        <div id="Eind_achtergrond"><img src="../Images/eind_achtergrond.jpg" alt=" Achtergrond "></div>
-        <div id="eind_scherm"><img src="" alt=""></div>
     </div>
 </body>
 </html>

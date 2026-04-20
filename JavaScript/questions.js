@@ -276,7 +276,7 @@ let questions = [
             correct: 1
         },
         {
-            tekst: "Wij spel.. een spelletje.",
+            tekst: "Wij speel.. een spelletje.",
             antwoorden: ["-ten", "-den"],
             correct: 0
         },
