@@ -256,11 +256,6 @@ let questions = [
             correct: 1
         },
         {
-            tekst: "Wij kijk.. naar een film.",
-            antwoorden: ["-ten", "-den"],
-            correct: 0
-        },
-        {
             tekst: "Zij luister.. naar muziek.",
             antwoorden: ["-te", "-de"],
             correct: 1
@@ -278,7 +273,7 @@ let questions = [
         {
             tekst: "Wij speel.. een spelletje.",
             antwoorden: ["-ten", "-den"],
-            correct: 0
+            correct: 1
         },
         {
             tekst: "Zij antwoord.. netjes.",

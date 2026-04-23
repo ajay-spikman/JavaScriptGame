@@ -12,14 +12,17 @@
 <body>
     <div class="begin">
         <h1 id="Title">Hammy</h1>
-        <div id="Start_button">
+        <h4 id="Subtitle">Leer de regels van de Nederlandse taal op een leuke manier!</h4>
+        <div id="Start1_button">
             <button class="Button" onclick="startSpel1()">jou / jouw</button>
+        </div>
+        <div id="Start2_button">
             <button class="Button" onclick="startSpel2()">verledentijd</button>
         </div> 
         <div id="Informatie_button">
             <button class="Button" onclick="showInformatie()">informatie</button>
         </div>
-        <div id="achtergrond"><img src="../Images/Hammy.JPG" alt=" Achtergrond "></div>
+        <div id="achtergrond"><img src="../Images/background_start.jpg" alt=" Achtergrond "></div>
     </div>
 
     <div class="informatie">
@@ -44,7 +47,7 @@
                         leven → leefde (je hoort een v, dus -de)
                     </p>
                 </div>
-                <button class="Button" onclick="startSpel1()">start verledentijd</button>
+                <button class="Button" onclick="startSpel2()">start verledentijd</button>
             </div>
             <div id="column_right">
                 <div id="uitleg_teks2">
@@ -65,7 +68,7 @@
                         Ik help jou. (ik help hem)
                     </p>
                 </div>
-                <button class="Button" onclick="startSpel2()">start jou / jouw</button>
+                <button class="Button" onclick="startSpel1()">start jou / jouw</button>
             </div>
         </div>
         <div id="Informatie_knoppen">
@@ -87,7 +90,11 @@
         <audio id="clickSound1" src="../Sounds/Correct.mp3"></audio>
         <audio id="clickSound2" src="../Sounds/Incorrect.mp3"></audio>
         <h2 id="gametimer">Tijd: 60s</h2>
-        <image id="game_background" src="../Images/GameBackground.jpg" alt="achtergrond">    
+        <div class="terug_knop" onclick="showBegin()">terug</div>
+        <div class="progress-bar-continer">
+            <div class="progress-bar" id="progress-bar"></div>
+            <div class="progress-bar-text" id="progress-bar-text"></div>
+        </div>
     </div>
 
     <div class="spel2">
@@ -100,6 +107,12 @@
         <audio id="clickSound1" src="../Sounds/Correct.mp3"></audio>
         <audio id="clickSound2" src="../Sounds/Incorrect.mp3"></audio>
         <h2 id="gametimer2">Tijd: 60s</h2>   
+        <div class="terug_knop" onclick="showBegin()">terug</div>
+        <div class="progress-bar-continer">
+            <div class="progress-bar" id="progress-bar2"></div>
+            <div class="progress-bar-text" id="progress-bar-text2"></div>
+        </div>
+
     </div>
 
     <div class="eind">

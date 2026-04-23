@@ -9,13 +9,20 @@ html, body{
     position: absolute;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 0;
     text-align: center;
     background-size: cover;
     width: 100%;
     min-height: 100vh;
     justify-content: center;
     align-items: center;
+}
+
+.begin #start1_button, .begin #start2_button{
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+    margin: 20px;
 }
 
 .countdown{
@@ -38,12 +45,13 @@ html, body{
     gap: 10px;
     text-align: center;
     background-size: cover;
-    background-color: lightblue;
+    background-color: lightcyan;
     width: 100%;
     min-height: 100vh;
     justify-content: center;
     align-items: center;
 }
+
 
 .eind{
     position: absolute;
@@ -53,7 +61,7 @@ html, body{
     flex-direction: column;
     gap: 10px;
     background-size: cover;
-    background-color: lightgreen;
+    background-color: lightgoldenrodyellow;
     text-align: center;
     width: 100%;
     height: 100vh;
@@ -68,7 +76,7 @@ html, body{
     flex-direction: column;
     gap: 10px;
     text-align: center;
-    background-color: lightsalmon;
+    background-color: lightpink;
     background-size: cover;
     width: 100%;
     height: 100vh;
@@ -81,6 +89,7 @@ html, body{
     color: white;
     text-shadow: 2px 2px 2px black;
     padding: 10px;
+    margin-top: 10px;
     font-size: 20px;
     cursor: pointer;
     background: rgba(4, 4, 4, 0.14);
@@ -94,7 +103,7 @@ html, body{
 .Game_Button{
     padding: 10px;
     font-size: 20px;
-    background-color: lightblue;
+    background-color: rgb(197, 231, 231);
     color: black;
     border: none;
     border-radius: 5px;
@@ -102,10 +111,33 @@ html, body{
     width: 200px;
 }
 
+.terug_knop{
+    padding: 10px;
+    font-size: 20px;
+    background-color: rgb(197, 231, 231);
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100px;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
 #Title{
-    font-size: 50px;
+    font-size: 100px;
     color: white;   
     text-shadow: 2px 2px 2px black;
+    margin: 0;
+}
+
+#Subtitle{
+    font-size: 20px;
+    color: white;   
+    text-shadow: 1px 1px 1px black;
+    margin: 0;
+    margin-bottom: 50px;
 }
 
 #vraag1, #vraag2{
@@ -226,4 +258,34 @@ html, body{
     margin-top: 5px;
     margin-bottom: 75px;
     z-index: 0;
+}
+
+.progress-bar-container {
+  height: 80px;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #406086;
+}
+
+.progress-bar {
+  background-color: #1b3e80;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  transition: width 1s;
+  transition-timing-function: linear;
+  
+}
+
+.progress-bar-text {
+  color: white;
+  font-size: 24px;
+  font-weight: 700;
+  position: relative;
+  z-index: 1;
 }

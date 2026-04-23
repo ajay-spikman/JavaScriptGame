@@ -32,7 +32,8 @@ function showSpel1() {
     showElement("none", "flex", "none", "none", "none", "none");
     renderVragen();
     let gametimerElement = document.getElementById("gametimer");
-    let timeLeft = 60;
+    let intialTime = 60;
+    let timeLeft = intialTime;
     gametimerElement.textContent = `Tijd: ${timeLeft}s`;
 
     let gametimerInterval = setInterval(() => {
@@ -128,7 +129,7 @@ function renderVragen() {
         
         antwoordKnoppen.forEach((knop, index) => {
             knop.textContent = vraag.antwoorden[index];
-            knop.style.backgroundColor = "rgb(104, 119, 134)";
+            knop.style.backgroundColor = "rgb(197, 231, 231)";
             knop.style.border = "2px solid black";
         });
     }
@@ -141,6 +142,7 @@ function checkAnswer(index) {
     const antwoordKnoppen = antwoordContainer.querySelectorAll(".Game_Button");
     
     if (index === correct) {
+        document.getElementById(antwoordId).style.pointerEvents = 'disabled';
         score++;
         antwoordKnoppen[index].style.backgroundColor = "green";
         document.getElementById("clickSound1").play();
@@ -150,7 +152,7 @@ function checkAnswer(index) {
         antwoordKnoppen[correct].style.backgroundColor = "green";
     }
     
-    setTimeout(() => {
+    setTimeout(function() {
         currentQuestion++;
         if (currentQuestion < vragen.length) {
             renderVragen();
@@ -167,6 +169,13 @@ function Playsound1() {
 
 function Playsound0() {
     document.getElementById("clickSound2").play();
+}
+
+function terugNaarBegin() {
+    showBegin();
+    if (terugNaarBeginInterval) {
+        clearInterval(teruqgNaarBeginInterval);
+    }
 }
 
 window.showBegin = showBegin;
